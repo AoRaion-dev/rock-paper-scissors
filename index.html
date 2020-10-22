@@ -18,15 +18,21 @@
 
             const playRound = () => {
                 if(playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
-                return `You Lose! ${computerSelection} beats ${playerSelection}!`;
+                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
                 } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
                     return `You Lose! ${computerSelection} beats ${playerSelection}!`;
                 } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock') {
                     return `You Lose! ${computerSelection} beats ${playerSelection}!`;
                 } else if(playerSelection.toLowerCase() === computerSelection) {
                     return 'Draw!';
-                } else {
+                } else if(playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors') {
                     return `You Win! ${playerSelection} beats ${computerSelection}!`;
+                } else if(playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
+                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
+                } else if(playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper') {
+                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
+                } else {
+                    return 'INVALID_PROMPT';
                 }
             };
 
